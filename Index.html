@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Philips Adebayo builds growth systems, acquisition funnels, digital products and internal tools for businesses and early-stage products.">
+  <meta name="author" content="Philips Adebayo">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#F1EDE3">
+
+  <meta property="og:title" content="Philips Adebayo — Systems Builder">
+  <meta property="og:description" content="Growth systems, acquisition infrastructure, digital products and internal tools.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOURDOMAIN.com/">
+  <meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg">
+
+  <title>Philips Adebayo — Systems Builder</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#F1EDE3;
+      --bg-2:#E7E1D2;
+      --ink:#1D2A3A;
+      --ink-soft:#3C4B5C;
+      --accent:#C98A2C;
+      --signal:#1390C6;
+      --line:#74757A;
+      --line-soft:#C7BFA9;
+      --card:#FBF9F3;
+      --max:1080px;
+      --radius:6px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+      font-size:16px;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    ::selection{background:var(--accent);color:var(--card)}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+    .eyebrow{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      color:var(--accent);
+      font-weight:500;
+    }
+
+    h1,h2,h3{
+      font-family:'Space Grotesk',sans-serif;
+      font-weight:600;
+      letter-spacing:-.02em;
+      color:var(--ink);
+    }
+
+    .focus-ring:focus-visible{
+      outline:2px solid var(--signal);
+      outline-offset:4px;
+    }
+
+    /* Header */
+    header{
+      padding:22px 0;
+      border-bottom:1px solid var(--line-soft);
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(241,237,227,.94);
+      backdrop-filter:blur(10px);
+    }
+
+    header .wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .mark{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:14px;
+      font-weight:500;
+      letter-spacing:.02em;
+      text-decoration:none;
+    }
+
+    .mark span{color:var(--accent)}
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    nav a{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:12.5px;
+      text-decoration:none;
+      color:var(--ink-soft);
+      border-bottom:1px solid transparent;
+      transition:border-color .15s ease,color .15s ease;
+    }
+
+    nav a:hover,nav a:focus-visible{
+      color:var(--ink);
+      border-color:var(--accent);
+    }
+
+    /* Hero */
+    .hero{padding:92px 0 68px}
+    .hero h1{
+      font-size:clamp(42px,6.5vw,72px);
+      line-height:1.02;
+      max-width:900px;
+      margin:18px 0 24px;
+    }
+
+    .hero h1 em{
+      font-style:normal;
+      color:var(--accent);
+    }
+
+    .hero .lede{
+      font-size:19px;
+      color:var(--ink-soft);
+      max-width:700px;
+      margin-bottom:34px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .btn{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:13px;
+      letter-spacing:.02em;
+      padding:13px 20px;
+      border-radius:3px;
+      text-decoration:none;
+      display:inline-block;
+      transition:transform .15s ease,background .15s ease,border-color .15s ease;
+    }
+
+    .btn-primary{background:var(--ink);color:var(--card)}
+    .btn-primary:hover{background:var(--accent);transform:translateY(-1px)}
+    .btn-ghost{border:1px solid var(--line-soft);color:var(--ink)}
+    .btn-ghost:hover{border-color:var(--ink)}
+
+    .hero-note{
+      margin-top:20px;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11.5px;
+      color:var(--line);
+    }
+
+    /* System map */
+    .systems{
+      margin-top:68px;
+      border:1px solid var(--line-soft);
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:30px;
+    }
+
+    .systems-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:24px;
+    }
+
+    .systems-head h3{font-size:15px}
+    .systems-note{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11.5px;
+      color:var(--line);
+    }
+
+    .node-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .node{
+      border:1px solid var(--line-soft);
+      border-radius:4px;
+      padding:17px;
+      background:var(--bg);
+      position:relative;
+      text-decoration:none;
+      transition:transform .15s ease,border-color .15s ease;
+    }
+
+    a.node:hover{transform:translateY(-2px);border-color:var(--ink)}
+    .node::before{
+      content:"";
+      position:absolute;
+      top:-8px;
+      left:16px;
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:var(--signal);
+    }
+
+    .node.core::before{background:var(--accent)}
+    .node-label{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11px;
+      color:var(--accent);
+      letter-spacing:.05em;
+    }
+
+    .node.core .node-label{color:var(--signal)}
+    .node-url{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:13px;
+      margin:6px 0 8px;
+      font-weight:500;
+    }
+
+    .node-desc{font-size:13.5px;color:var(--ink-soft)}
+    .node-link{
+      display:block;
+      margin-top:12px;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10.5px;
+      color:var(--signal);
+    }
+
+    /* Sections */
+    section{padding:78px 0;border-top:1px solid var(--line-soft)}
+    .section-head{
+      display:flex;
+      align-items:baseline;
+      gap:16px;
+      margin-bottom:40px;
+    }
+
+    .section-head h2{font-size:29px}
+    .section-head .eyebrow{white-space:nowrap}
+
+    /* Approach */
+    .thesis-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px 48px;
+    }
+
+    .thesis-grid p{
+      font-size:16px;
+      color:var(--ink-soft);
+    }
+
+    .thesis-grid strong{color:var(--ink);font-weight:600}
+
+    .operating-model{
+      margin-top:38px;
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      border:1px solid var(--line-soft);
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+
+    .model-step{
+      padding:20px 16px;
+      border-right:1px solid var(--line-soft);
+    }
+
+    .model-step:last-child{border-right:0}
+    .model-num{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11px;
+      color:var(--accent);
+    }
+
+    .model-step h3{font-size:16px;margin:7px 0 5px}
+    .model-step p{font-size:12.5px;color:var(--ink-soft)}
+
+    /* Work */
+    .work-list{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+    }
+
+    .work-item{
+      display:grid;
+      grid-template-columns:185px 1fr 170px;
+      gap:26px;
+      padding:28px 0;
+      border-bottom:1px solid var(--line-soft);
+      align-items:start;
+    }
+
+    .work-item:first-child{border-top:1px solid var(--line-soft)}
+    .work-role{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11.5px;
+      color:var(--line);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      padding-top:4px;
+    }
+
+    .work-body h3{font-size:20px;margin-bottom:7px}
+    .work-body p{font-size:14.5px;color:var(--ink-soft)}
+    .work-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      justify-content:flex-end;
+      align-content:flex-start;
+    }
+
+    .tag{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10.5px;
+      padding:4px 9px;
+      border:1px solid var(--line-soft);
+      border-radius:20px;
+      color:var(--ink-soft);
+      white-space:nowrap;
+    }
+
+    /* Proof */
+    .proof-strip{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:0;
+      background:var(--ink);
+      color:var(--bg);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+
+    .proof-card{
+      padding:30px;
+      border-right:1px solid rgba(241,237,227,.18);
+    }
+
+    .proof-card:last-child{border-right:0}
+    .proof-num{
+      font-family:'Space Grotesk',sans-serif;
+      font-size:34px;
+      font-weight:600;
+      color:var(--accent);
+    }
+
+    .proof-label{
+      font-size:12.5px;
+      color:#C7C1AE;
+      margin-top:4px;
+    }
+
+    .proof-source{
+      margin-top:11px;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10px;
+      color:#9DA3A8;
+    }
+
+    /* Stack */
+    .subhead{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:12px;
+      letter-spacing:.04em;
+      color:var(--line);
+      text-transform:uppercase;
+      margin-bottom:15px;
+    }
+
+    .pill-grid{display:flex;flex-wrap:wrap;gap:9px}
+    .pill{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:12px;
+      padding:8px 13px;
+      background:var(--bg-2);
+      border-radius:3px;
+      color:var(--ink-soft);
+    }
+
+    .credentials{
+      margin-top:42px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .cred-badge{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      padding:15px 16px;
+      border:1px solid var(--line-soft);
+      border-radius:6px;
+      background:var(--card);
+      text-decoration:none;
+      color:inherit;
+      transition:border-color .15s ease,transform .15s ease;
+    }
+
+    a.cred-badge:hover{border-color:var(--ink);transform:translateX(2px)}
+    .cred-mark{
+      width:38px;
+      height:38px;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:'IBM Plex Mono',monospace;
+      font-weight:600;
+      font-size:12px;
+      color:var(--card);
+      flex-shrink:0;
+      background:var(--ink);
+    }
+
+    .cred-name{font-size:14px;font-weight:500}
+    .cred-sub{font-size:12px;color:var(--line);margin-top:2px}
+    .cred-link-hint{
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10.5px;
+      color:var(--signal);
+      margin-top:4px;
+    }
+
+    /* Contact */
+    footer{
+      padding:80px 0 60px;
+      border-top:1px solid var(--line-soft);
+    }
+
+    footer h2{
+      font-size:clamp(32px,5vw,52px);
+      max-width:700px;
+      line-height:1.06;
+      margin:14px 0 18px;
+    }
+
+    footer p{
+      color:var(--ink-soft);
+      max-width:540px;
+      margin-bottom:28px;
+      font-size:16px;
+    }
+
+    .foot-meta{
+      margin-top:58px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11px;
+      color:var(--line);
+    }
+
+    .availability{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11px;
+      color:var(--ink-soft);
+      margin-top:18px;
+    }
+
+    .availability::before{
+      content:"";
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:var(--signal);
+    }
+
+    @media (max-width:850px){
+      .node-row{grid-template-columns:1fr}
+      .work-item{grid-template-columns:150px 1fr}
+      .work-tags{grid-column:2;justify-content:flex-start}
+      .operating-model{grid-template-columns:1fr 1fr}
+      .model-step:nth-child(2n){border-right:0}
+      .model-step{border-bottom:1px solid var(--line-soft)}
+      .model-step:last-child{border-bottom:0}
+      .proof-strip{grid-template-columns:1fr 1fr}
+      .proof-card:nth-child(2){border-right:0}
+      .proof-card:nth-child(-n+2){border-bottom:1px solid rgba(241,237,227,.18)}
+      .credentials{grid-template-columns:1fr}
+    }
+
+    @media (max-width:650px){
+      header{position:static}
+      .wrap{padding:0 20px}
+      nav{gap:15px}
+      nav a:nth-child(1),nav a:nth-child(2){display:none}
+      .hero{padding:68px 0 50px}
+      .hero h1{font-size:43px}
+      .hero .lede{font-size:17px}
+      .systems{padding:22px}
+      section{padding:62px 0}
+      .section-head{display:block;margin-bottom:30px}
+      .section-head .eyebrow{display:block;margin-bottom:7px}
+      .thesis-grid{grid-template-columns:1fr}
+      .operating-model{grid-template-columns:1fr}
+      .model-step{border-right:0}
+      .work-item{grid-template-columns:1fr;gap:8px}
+      .work-tags{grid-column:auto}
+      .proof-strip{grid-template-columns:1fr}
+      .proof-card{border-right:0!important;border-bottom:1px solid rgba(241,237,227,.18)!important}
+      .proof-card:last-child{border-bottom:0!important}
+      footer{padding:64px 0 48px}
+      .foot-meta{margin-top:44px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .btn,.node,.cred-badge{transition:none}
+    }
+  </style>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231D2A3A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-size='34' font-weight='700' fill='%23C98A2C'%3EP%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <a class="mark focus-ring" href="#top" aria-label="Philips Adebayo home">PHILIPS<span>.</span>ADEBAYO</a>
+      <nav aria-label="Primary navigation">
+        <a href="#work" class="focus-ring">Work</a>
+        <a href="#systems" class="focus-ring">Systems</a>
+        <a href="#proof" class="focus-ring">Proof</a>
+        <a href="https://www.linkedin.com/in/philips-adebayo/" class="focus-ring" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#contact" class="focus-ring">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" style="border-top:none;">
+      <div class="wrap">
+        <div class="eyebrow">Ibadan, Nigeria — available for selected engagements</div>
+
+        <h1>I build the <em>growth systems</em> that turn ideas into working digital operations.</h1>
+
+        <p class="lede">
+          Lead Systems &amp; Growth Engineer working across growth strategy, acquisition, SEO,
+          conversion funnels, web development and internal tooling. I take projects from
+          standing start to measurable traction — and stay close enough to build what the
+          growth actually needs.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary focus-ring" href="mailto:philips.adebayo26@gmail.com">Start a conversation</a>
+          <a class="btn btn-ghost focus-ring" href="#work">View selected work</a>
+          <a class="btn btn-ghost focus-ring" href="https://www.linkedin.com/in/philips-adebayo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+
+        <div class="availability">Currently open to new client, contract and full-time opportunities.</div>
+
+        <div class="systems" id="systems">
+          <div class="systems-head">
+            <h3>Systems I built, shipped and operate</h3>
+            <div class="systems-note">live properties · production use</div>
+          </div>
+
+          <div class="node-row">
+            <a class="node core focus-ring" href="https://growth.sdbe.online" target="_blank" rel="noopener">
+              <div class="node-label">CORE</div>
+              <div class="node-url">growth.sdbe.online</div>
+              <div class="node-desc">Lead outreach, qualification and tracking loop built end to end.</div>
+              <span class="node-link">OPEN SYSTEM ↗</span>
+            </a>
+
+            <a class="node focus-ring" href="https://social.sdbe.online" target="_blank" rel="noopener">
+              <div class="node-label">SOCIAL</div>
+              <div class="node-url">social.sdbe.online</div>
+              <div class="node-desc">Internal social workflow built and shipped instead of licensed.</div>
+              <span class="node-link">OPEN SYSTEM ↗</span>
+            </a>
+
+            <a class="node focus-ring" href="https://insight.sdbe.online" target="_blank" rel="noopener">
+              <div class="node-label">INSIGHT</div>
+              <div class="node-url">insight.sdbe.online</div>
+              <div class="node-desc">Reporting layer clients use to check performance.</div>
+              <span class="node-link">OPEN SYSTEM ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">01 / Approach</span>
+          <h2>Strategy is only useful when something ships.</h2>
+        </div>
+
+        <div class="thesis-grid">
+          <p>
+            My work sits between <strong>growth marketing and web development</strong>.
+            I don't just plan campaigns — I write the funnels, the SEO, the internal software
+            and the operating workflows behind them.
+          </p>
+
+          <p>
+            I use AI tools such as Claude and ChatGPT to accelerate research, drafting,
+            analysis and first-pass implementation. <strong>I make the architectural calls,
+            validate the work and own what actually ships.</strong>
+          </p>
+
+          <p>
+            Most of my strongest work starts with imperfect conditions: no established
+            channel, no system, limited traction or a process that is too manual to scale.
+            <strong>Starting from zero is a problem I am comfortable owning.</strong>
+          </p>
+
+          <p>
+            The goal is not to create more marketing activity. It is to build a system where
+            acquisition, conversion, delivery and measurement reinforce one another.
+          </p>
+        </div>
+
+        <div class="operating-model" aria-label="Operating model">
+          <div class="model-step">
+            <div class="model-num">01</div>
+            <h3>Diagnose</h3>
+            <p>Find the constraint before adding activity.</p>
+          </div>
+          <div class="model-step">
+            <div class="model-num">02</div>
+            <h3>Design</h3>
+            <p>Turn the opportunity into a practical system.</p>
+          </div>
+          <div class="model-step">
+            <div class="model-num">03</div>
+            <h3>Build</h3>
+            <p>Ship the smallest useful version quickly.</p>
+          </div>
+          <div class="model-step">
+            <div class="model-num">04</div>
+            <h3>Measure</h3>
+            <p>Connect activity to business outcomes.</p>
+          </div>
+          <div class="model-step">
+            <div class="model-num">05</div>
+            <h3>Improve</h3>
+            <p>Keep what works and fix what doesn't.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">02 / Work</span>
+          <h2>Selected work and operating experience.</h2>
+        </div>
+
+        <div class="work-list">
+          <article class="work-item">
+            <div class="work-role">Lead Systems &amp; Growth Engineer<br><span>Oct 2025 – Present</span></div>
+            <div class="work-body">
+              <h3>SDBE Backend Solutions</h3>
+              <p>
+                Structured digital growth execution partner for clinics and service businesses
+                across the US, Canada and Nigeria. Built the architecture connecting the public
+                site, growth diagnosis funnel and three service packages, and continue to maintain
+                the operating layer.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Systems architecture</span>
+              <span class="tag">Growth engineering</span>
+              <span class="tag">Funnels</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Strategic Digital Partner<br><span>Dec 2025 – Present</span></div>
+            <div class="work-body">
+              <h3>CONSULT24 LTD</h3>
+              <p>
+                Contract engagement managing digital marketing and growth strategy across SEO,
+                GEO, CRO and overall supervision of digital accounts.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">SEO / GEO</span>
+              <span class="tag">CRO</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Anchor Client</div>
+            <div class="work-body">
+              <h3>Brooklyn Center for Endocrine Health</h3>
+              <p>
+                Built and shipped a static, fast booking funnel from zero, routing patients to
+                three providers' scheduling pages. Also developed an ongoing LinkedIn content
+                workflow sourced from the practice's own patient education material.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Booking funnel</span>
+              <span class="tag">Healthcare</span>
+              <span class="tag">Content</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Growth Marketer / Consultant<br><span>Oct 2025 – Present</span></div>
+            <div class="work-body">
+              <h3>PreWrite AI</h3>
+              <p>
+                Took growth from a standing start to more than 1,000 active users and 700+
+                resumes generated through the matching engine. Built content and distribution
+                across LinkedIn and X, supported SEO and LinkedIn optimisation, managed the
+                WhatsApp community and negotiated a grassroots NYSC activation partnership.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Growth</span>
+              <span class="tag">Content</span>
+              <span class="tag">Community</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Product &amp; Growth Lead</div>
+            <div class="work-body">
+              <h3>PetMatch</h3>
+              <p>
+                Building a free directory helping dog and cat owners across Nigeria find nearby
+                mates for their pets and connect directly. Currently developing local listing
+                supply in Ibadan through direct outreach and WhatsApp follow-up.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Marketplace</span>
+              <span class="tag">0-to-1</span>
+              <span class="tag">Local growth</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Growth Marketer / Digital Growth Lead<br><span>Oct 2022 – Oct 2025</span></div>
+            <div class="work-body">
+              <h3>Eggcorn Digital</h3>
+              <p>
+                Owned growth execution across paid acquisition, funnel optimisation and campaign
+                delivery for clients across fintech, ecommerce, media and events.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Paid media</span>
+              <span class="tag">Funnels</span>
+              <span class="tag">Growth</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Business Analyst &amp; Digital Marketing Executive<br><span>Oct 2021 – Oct 2022</span></div>
+            <div class="work-body">
+              <h3>Precise Platform</h3>
+              <p>
+                Supported business growth through market research, performance analysis and
+                digital campaign execution across Google and Meta, reporting directly to leadership.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">Business analysis</span>
+              <span class="tag">Campaigns</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-role">Independent Project</div>
+            <div class="work-body">
+              <h3>Ticketie</h3>
+              <p>
+                Nigerian hotel booking platform. Wrote the advertising copy, built the landing
+                page and produced the SEO content from the ground up.
+              </p>
+            </div>
+            <div class="work-tags">
+              <span class="tag">SEO</span>
+              <span class="tag">Landing pages</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">03 / Proof</span>
+          <h2>What the work has produced.</h2>
+        </div>
+
+        <div class="proof-strip">
+          <div class="proof-card">
+            <div class="proof-num">1,000+</div>
+            <div class="proof-label">active users on PreWrite AI</div>
+            <div class="proof-source">grown from a standing start</div>
+          </div>
+
+          <div class="proof-card">
+            <div class="proof-num">700+</div>
+            <div class="proof-label">resumes generated through the matching engine</div>
+            <div class="proof-source">PreWrite AI</div>
+          </div>
+
+          <div class="proof-card">
+            <div class="proof-num">4</div>
+            <div class="proof-label">internal tools designed and shipped in-house</div>
+            <div class="proof-source">not licensed software</div>
+          </div>
+
+          <div class="proof-card">
+            <div class="proof-num">0 → 1</div>
+            <div class="proof-label">repeated pattern across products, funnels and systems</div>
+            <div class="proof-source">build · launch · measure · improve</div>
+          </div>
+        </div>
+
+        <div style="margin-top:52px;">
+          <div class="subhead">Tools I actually reach for</div>
+          <div class="pill-grid">
+            <span class="pill">Claude</span>
+            <span class="pill">ChatGPT</span>
+            <span class="pill">GA4</span>
+            <span class="pill">Google Tag Manager</span>
+            <span class="pill">Search Console</span>
+            <span class="pill">Vercel</span>
+            <span class="pill">Supabase</span>
+            <span class="pill">Cloudflare</span>
+            <span class="pill">Resend</span>
+            <span class="pill">GitHub</span>
+          </div>
+        </div>
+
+        <div class="credentials">
+          <a class="cred-badge focus-ring" href="https://www.mckinsey.org/our-programs/forward/overview" target="_blank" rel="noopener">
+            <div class="cred-mark">MCK</div>
+            <div>
+              <div class="cred-name">McKinsey.org Forward — Alumnus</div>
+              <div class="cred-sub">Completed the Core Skills learning program</div>
+              <div class="cred-link-hint">mckinsey.org/our-programs/forward ↗</div>
+            </div>
+          </a>
+
+          <a class="cred-badge focus-ring" href="https://developers.google.com/program" target="_blank" rel="noopener">
+            <div class="cred-mark" style="background:var(--signal)">G</div>
+            <div>
+              <div class="cred-name">Google Developer Program — Member</div>
+              <div class="cred-sub">Developer ecosystem and early-access programmes</div>
+              <div class="cred-link-hint">developers.google.com/program ↗</div>
+            </div>
+          </a>
+
+          <a class="cred-badge focus-ring" href="https://medicine.yale.edu/childstudy/services/community-and-schools-programs/center-for-emotional-intelligence/" target="_blank" rel="noopener">
+            <div class="cred-mark" style="background:#5B2333">Y</div>
+            <div>
+              <div class="cred-name">Yale Center for Emotional Intelligence — SEL Certificate</div>
+              <div class="cred-sub">Social and Emotional Learning</div>
+              <div class="cred-link-hint">medicine.yale.edu/childstudy ↗</div>
+            </div>
+          </a>
+
+          <div class="cred-badge">
+            <div class="cred-mark" style="background:var(--accent)">FB</div>
+            <div>
+              <div class="cred-name">ForbesBLK — Member</div>
+            </div>
+          </div>
+
+          <div class="cred-badge">
+            <div class="cred-mark" style="background:var(--line)">L</div>
+            <div>
+              <div class="cred-name">LEAP — Member</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <span class="eyebrow">04 / Next</span>
+      <h2>Have a growth problem that needs more than a strategy deck?</h2>
+      <p>
+        I'm reachable for growth marketing, web development, SEO, digital systems and
+        0-to-1 product work.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary focus-ring" href="mailto:philips.adebayo26@gmail.com">philips.adebayo26@gmail.com</a>
+        <a class="btn btn-ghost focus-ring" href="https://www.linkedin.com/in/philips-adebayo/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+
+      <div class="foot-meta">
+        <span>Philips Adebayo — Ibadan, Nigeria</span>
+        <span>Lead Systems &amp; Growth Engineer · SDBE Backend Solutions</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional: replace YOURDOMAIN.com in the metadata above before production. -->
+</body>
+</html>
