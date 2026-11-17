@@ -347,6 +347,19 @@
       white-space:nowrap;
     }
 
+
+    /* Case study links */
+    .cs-link{display:inline-block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--signal);text-decoration:none;border-bottom:1px solid transparent}
+    .cs-link:hover{border-color:var(--signal)}
+    .cs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .cs-card{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius);padding:20px;transition:border-color .15s,transform .15s}
+    .cs-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+    .cs-kind{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+    .cs-card h3{font-size:18px;margin:6px 0}
+    .cs-card p{font-size:13.5px;color:var(--ink-soft)}
+    .cs-num{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-top:12px}
+    @media (max-width:820px){.cs-grid{grid-template-columns:1fr}}
+
     /* Proof */
     .proof-strip{
       display:grid;
@@ -551,6 +564,7 @@
       <a class="mark focus-ring" href="#top" aria-label="Philips Adebayo home">PHILIPS<span>.</span>ADEBAYO</a>
       <nav aria-label="Primary navigation">
         <a href="#work" class="focus-ring">Work</a>
+        <a href="case-studies/" class="focus-ring">Case studies</a>
         <a href="#systems" class="focus-ring">Systems</a>
         <a href="#proof" class="focus-ring">Proof</a>
         <a href="https://www.linkedin.com/in/philips-adebayo/" class="focus-ring" target="_blank" rel="noopener">LinkedIn</a>
@@ -733,6 +747,7 @@
                 "It's working beautifully, properly structured and clean. Working with Philips is
                 stress-free." Dr Saka Kazeem, MD, Endocrinologist
               </p>
+              <a class="cs-link focus-ring" href="case-studies/elk-medical.html">Read the case study →</a>
             </div>
             <div class="work-tags">
               <span class="tag">Healthcare</span>
@@ -753,6 +768,7 @@
                 community. The product has kept growing since: 1,237+ job seekers today
                 (<a href="https://prewriteai.com/" target="_blank" rel="noopener">live counter</a>, Nov 2026).
               </p>
+              <a class="cs-link focus-ring" href="case-studies/prewrite-ai.html">Read the case study →</a>
             </div>
             <div class="work-tags">
               <span class="tag">Growth</span>
@@ -773,6 +789,7 @@
                 listings through direct outreach, WhatsApp follow-up and Naija Pet Owners, a free
                 Instagram and WhatsApp community for pet owners.
               </p>
+              <a class="cs-link focus-ring" href="case-studies/petmatch.html">Read the case study →</a>
             </div>
             <div class="work-tags">
               <span class="tag">Community</span>
@@ -795,6 +812,7 @@
                 marketing strategy and rollout, alongside teammates who led overall campaign planning. The landing page brought in 5,000+ registrations, and one Meta campaign alone reached over 1 million people. Clients kept coming back with new
                 projects and referred new clients to the agency.
               </p>
+              <a class="cs-link focus-ring" href="case-studies/hilda-baci-cookathon.html">Read the Cook-a-thon case study →</a>
             </div>
             <div class="work-tags">
               <span class="tag">Paid media</span>
@@ -814,6 +832,7 @@
                 in-person activations. Also organised the Lagos launch event, covered by TechCabal
                 in December 2023, and handled business development in Nigeria.
               </p>
+              <a class="cs-link focus-ring" href="case-studies/bitlink.html">Read the case study →</a>
             </div>
             <div class="work-tags">
               <span class="tag">Activation</span>
@@ -855,10 +874,28 @@
       </div>
     </section>
 
+
+    <section id="case-studies">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">03 / Case studies</span>
+          <h2>The work, in detail.</h2>
+        </div>
+        <div class="cs-grid">
+          <a class="cs-card focus-ring" href="case-studies/elk-medical.html"><div class="cs-kind">Healthcare · SDBE</div><h3>Elk Medical</h3><p>Booking by condition, after-hours capture, staff dashboards and insights for a Brooklyn endocrine practice.</p><div class="cs-num">Tebra → SDBE</div></a>
+          <a class="cs-card focus-ring" href="case-studies/prewrite-ai.html"><div class="cs-kind">Growth · SDBE</div><h3>PreWrite AI</h3><p>Activation-first growth and an NYSC partnership for an AI job application tool.</p><div class="cs-num">100 → 1,000+ users</div></a>
+          <a class="cs-card focus-ring" href="case-studies/hilda-baci-cookathon.html"><div class="cs-kind">Campaign · Eggcorn</div><h3>Hilda Baci Cook-a-thon</h3><p>Paid ads, landing page, attendee data and lifecycle messaging for a world record attempt.</p><div class="cs-num">5,000+ registrations</div></a>
+          <a class="cs-card focus-ring" href="case-studies/personal-care-brand.html"><div class="cs-kind">E-commerce · anonymised</div><h3>Personal care brand</h3><p>A decades-old brand’s website turned from brochure into a shop that takes orders.</p><div class="cs-num">3 sales in 2 months</div></a>
+          <a class="cs-card focus-ring" href="case-studies/bitlink.html"><div class="cs-kind">Activation · Contract</div><h3>Bitlink</h3><p>Campus activation across five universities and the Lagos launch of a crypto exchange.</p><div class="cs-num">~250 student signups</div></a>
+          <a class="cs-card focus-ring" href="case-studies/petmatch.html"><div class="cs-kind">Community project</div><h3>PetMatch</h3><p>A free directory helping Nigerian pet owners find mates for their pets.</p><div class="cs-num">12 listings</div></a>
+        </div>
+      </div>
+    </section>
+
     <section id="proof">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">03 / Proof</span>
+          <span class="eyebrow">04 / Proof</span>
           <h2>What the work has produced.</h2>
         </div>
 
@@ -876,9 +913,9 @@
           </div>
 
           <div class="proof-card">
-            <div class="proof-num">4</div>
-            <div class="proof-label">internal tools designed and shipped in-house</div>
-            <div class="proof-source">not licensed software</div>
+            <div class="proof-num">5,000+</div>
+            <div class="proof-label">Cook-a-thon registrations from one landing page</div>
+            <div class="proof-source">Hilda Baci world record attempt · May 2023</div>
           </div>
 
           <div class="proof-card">
@@ -952,7 +989,7 @@
 
   <footer id="contact">
     <div class="wrap">
-      <span class="eyebrow">04 / Next</span>
+      <span class="eyebrow">05 / Next</span>
       <h2>Have a growth problem that needs more than a strategy deck?</h2>
       <p>
         I'm reachable for growth marketing, web development, SEO, digital systems and
